@@ -41,7 +41,7 @@ use Apache2::RequestRec;
 use APR::Table;
 use Apache2::Const -compile => qw/OK/;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 # Register an Apache directive
 Apache2::Module::add (__PACKAGE__, [{ name => 'WebPropertyID' }]);
