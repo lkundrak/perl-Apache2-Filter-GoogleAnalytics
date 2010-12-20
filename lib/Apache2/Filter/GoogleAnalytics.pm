@@ -109,11 +109,14 @@ sub handler
 	$parser->{filter} = $filter;
 
 	# If the GA ID is present, format the GA Code
+	# Only for HTML resources
 	my $config = Apache2::Module::get_config (__PACKAGE__,
 		$filter->r->server, $filter->r->per_dir_config);
 	$parser->{ga_code} = '';
 	$parser->{ga_code} = ga_script ($config->{'WebPropertyID'})
-		if exists $config->{'WebPropertyID'};
+		if exists $config->{'WebPropertyID'}
+		and ($filter->r->content_type () eq 'text/html'
+		or $filter->r->content_type () eq 'application/xhtml+xml');
 
 	# Extend the body length
 	if ($filter->r->headers_out->get ('Content-Length')) {
