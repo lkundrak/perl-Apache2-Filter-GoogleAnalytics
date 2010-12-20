@@ -140,8 +140,6 @@ sub handler
 	return Apache2::Const::OK;
 }
 
-1;
-
 =head1 SEE ALSO
 
 L<HTML::Parser>, L<Apache2::Filter>.
@@ -154,3 +152,10 @@ under the same terms as Perl itself.
 =head1 AUTHOR
 
 Lubomir Rintel, C<< <lkundrak@v3.sk> >>
+
+The code is hosted on GitHub L<https://github.com/lkundrak/perl-Apache2-Filter-GoogleAnalytics>
+Bug fixes and feature enhancements are always welcome.
+
+=cut
+
+1;
